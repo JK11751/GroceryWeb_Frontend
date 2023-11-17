@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import CartProduct from "../component/cartProduct";
 import emptyCartImage from "../assest/empty.gif"
 import { toast } from "react-hot-toast";
-import {loadStripe} from '@stripe/stripe-js';
 import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
@@ -26,7 +25,6 @@ const Cart = () => {
 
       if(user.email){
           
-          const stripePromise = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY)
           const res = await fetch(`https://groceryweb.onrender.com/create-checkout-session`,{
             method : "POST",
             headers  : {
@@ -39,8 +37,7 @@ const Cart = () => {
           const data = await res.json()
           console.log(data)
 
-          toast("Redirect to payment Gateway...!")
-          stripePromise.redirectToCheckout({sessionId : data}) 
+          toast("Payment on Delivery")
       }
       else{
         toast("You have not Login!")
