@@ -40,7 +40,7 @@ const Cart = () => {
           toast("Payment on Delivery")
       }
       else{
-        toast("You have not Login!")
+        toast("Login First!")
         setTimeout(()=>{
           navigate("/login")
         },1000)

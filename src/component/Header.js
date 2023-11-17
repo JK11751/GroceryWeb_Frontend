@@ -35,7 +35,7 @@ const Header = () => {
         <div className="flex items-center gap-4 md:gap-7">
           <nav className="gap-4 md:gap-6 text-base md:text-lg hidden md:flex">
             <Link to={""}>Home</Link>
-            <Link to={"menu/655775bd0ba2ceeff4739fe2"}>Menu</Link>
+          {/*  <Link to={"menu/655775bd0ba2ceeff4739fe2"}>Menu</Link> */}
           {/*  <Link to={"about"}>About</Link> */}
             <Link to={"contact"}>Contact</Link>
           </nav>
